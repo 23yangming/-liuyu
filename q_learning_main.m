@@ -76,12 +76,12 @@ for episode = 1:episodes
         
         % 计算奖励
         if maze(new_state(1), new_state(2)) == 1
-            reward = -10; %撞墙惩罚
-            new_state = agent.state; %撞墙后保持原位
+            reward = -10; % 撞墙惩罚
+            new_state = agent.state; % 撞墙后保持原位
         elseif isequal(new_state, end_position)
-            reward = 100; %到达终点奖励
+            reward = 100; % 到达终点奖励
         else
-            reward = -1; %正常移动
+            reward = -1; % 正常移动
         end 
        % Q值更新 (Bellman方程)
        % 获取当前位置执行该动作的旧Q值
